@@ -9,14 +9,14 @@
 */
 #pragma once 
 
-#include "Arduino.h"
-#include "MIDI.h"
+//#include "Arduino.h"
+#include <MIDI.h>
 
 #include "AbstractKemper.h"
 
 #include "Kemper_namespace.h"
 #include "Stomp.h"
-#include "utils.h"
+#include "Utils.h"
 
 BEGIN_KEMPER_NAMESPACE
 
