@@ -15,8 +15,10 @@ USING_NAMESPACE_KEMPER
 USING_NAMESPACE_MIDI
 
 #ifdef ARDUINO
-MIDI_CREATE_INSTANCE(HardwareSerial, Serial1, midiOutput);
-MIDI_CREATE_INSTANCE(HardwareSerial, Serial2, midiInput);
+#include <SoftwareSerial.h>
+	SoftwareSerial swSerial(2, 11); // RX, TX
+	MIDI_CREATE_INSTANCE(SoftwareSerial, swSerial, midiOutput);
+	midi::MidiInterface<SoftwareSerial> midiInput((SoftwareSerial&)swSerial);
 #else
 #include "MidiWrapper.h"
 MidiOutWrapper midiOutput;
